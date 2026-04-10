@@ -374,7 +374,7 @@ def generate_html(analysis: dict) -> str:
 
   <footer>
     <span>\u8cc7\u6599\u4f86\u6e90\uff1aPubMed &middot; \u5206\u6790\u6a21\u578b\uff1a{MODEL_NAME}</span>
-    <span><a href="https://www.leepsyclinic.com/" target="_blank">\U0001f3e5 \u7acb\u5fb7\u8a3a\u6240\u9996\u9801</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">\U0001f3e5 \u674e\u653f\u6d0b\u8eab\u5fc3\u8a3a\u6240\u9996\u9801</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
   </footer>
 </div>
 </body>
