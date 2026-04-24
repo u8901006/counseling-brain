@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年4月25日</title>
+<meta name="description" content="2026年4月25日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年4月25日</span>
+        <span class="badge badge-count">📊 23 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦創傷治療、憂鬱症治療、成癮、OCD治療與自殺防治領域，特別是道德傷害的臨床意義變化基準、MBCT合佗用藥對抗老年憂鬱症、以及整合治療浪漫分手危機的創新模式。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🎯</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>建立道德傷害結果量表在VA行為健康環境中的臨床顯著變化基準</h3>
+          <p class="journal-source">Assessment &middot; Establishing Clinically Significant Change Benchmarks for the Moral Injury Outcome Scale in VA Behavioral Health Settings</p>
+          <p>研究確立了道德傷害結果量表的臨床顯著變化基準，13分表示顯著改善，≤9分功能恢復，為道德傷害的測量基礎照護提供重要依據。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國退伍軍人事務部行為健康環境中接受治療的退伍軍人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">道德傷害結果量表(MIOS)評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">基線與治療後評分比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">確立了臨床顯著變化基準(13分)和功能恢復臨界值(≤9分)</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">創傷治療</span><span class="tag">PTSD</span><span class="tag">心理測量</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42027113/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>結合正念認知治療與艾司西酞普蘭治療老年難治性憂鬱症患者的認知與情緒恢復</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Combining Mindfulness-Based Cognitive Therapy With Escitalopram for Cognitive and Emotional Recovery in Older Adults With Treatment-Resistant Depression</p>
+          <p>研究發現正念認知治療合併艾司西酞普蘭顯著提升老年難治性憂鬱症患者的認知功能、生活品質，並減少憂鬱症狀。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">有認知障礙的老年難治性憂鬱症患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">正念認知治療(MBCT)合併艾司西酞普蘭治療</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">單獨使用艾司西酞普蘭治療</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">實驗組在認知功能、生活品質和憂鬱症狀改善上顯著優於控制組</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">CBT</span><span class="tag">正念</span><span class="tag">老年心理</span><span class="tag">憂鬱症</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42023679/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">❤️</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>基於心率變異性預測中國大學生憂鬱症状模型的開發</h3>
+          <p class="journal-source">Assessment &middot; Development of a Heart Rate Variability-Based Predictive Model for Depressive Symptoms in Chinese University Students</p>
+          <p>研究開發了基於心率變異性的憂鬱症状預測模型，準確率高達92.61%，為客觀評估大學生心理健康提供新工具。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">中國大學生</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">心率變異性(HRV)測量</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">傳統主觀憂鬱量表評估</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">成功建立預測準確率92.61%的客觀憂鬱症篩選模型</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">心理測量</span><span class="tag">憂鬱症</span><span class="tag">兒童青少年</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42015377/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🔍</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>身體形象與偏執-來自大規模社區樣本的網絡分析</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Body Image and Paranoia-Findings From a Large-Scale Community Sample Using Network Analysis</p>
+          <p>網絡分析顯示負面身體形象是偏執思想的核心節點，連接自尊、情緒調節等多個心理變量，為治療提供新方向。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">2605名非臨床社區樣本</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">網絡分析方法</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同性別群體比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">發現身體形象是偏執思想網絡中的核心節點，且存在性別差異</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">心理測量</span><span class="tag">CBT</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41999079/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">💼</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>荷蘭C類人格障礙患者的疾病負擔：生活品質、功能與社會成本</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Burden of Disease of Treatment-Seeking Patients With a Cluster-C Personality Disorder in the Netherlands</p>
+          <p>C類人格障礙患者的生活品質和功能顯著受损，每年社會成本高達€27,355-€60,454，是普通人群的2.8-4.2倍。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">375名尋求治療的C類人格障礙患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">生活品質和功能評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">104名無嚴重心理健康問題的普通人群</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">C類人格障礙患者生活品質和功能顯著受损，社會成本高昂</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">心理測量</span><span class="tag">CBT</span><span class="tag">慢性疼痛</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41766302/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#6</span>
+            <span class="emoji-icon">🧩</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>基模治療中的正向建構：範圍性回顧</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Positive Constructs in Schema Therapy: A Scoping Review</p>
+          <p>範圍性回顧顯示基模治療中正向建構(如健康成人模式、快樂兒童模式)與心理幸福感有強關聯，為治療提供新方向。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">基模治療文獻</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">基模治療中的正向建構</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">傳統基模治療</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">發現健康成人模式和快樂兒童模式與心理幸福感有強關聯</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">基模治療</span><span class="tag">心理測量</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41734134/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#7</span>
+            <span class="emoji-icon">🔄</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>從暴露到洞察：五個當代OCD病例的治療經驗與未來方向</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; From Exposure to Insight: Lessons From Five Contemporary OCD Cases and Where Treatment Should Go Next</p>
+          <p>綜合五個OCD病例報告，提出ERP治療應精準個人化，強化期望違背、洞察力和價值導向行動，而非僅僅增加暴露。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">OCD患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">精準個人化的ERP治療</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">傳統ERP治療</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">提出ERP治療的精準個人化策略，強化期望違背、洞察力和價值導向行動</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">強迫症</span><span class="tag">CBT</span><span class="tag">心理測量</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610133/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#8</span>
+            <span class="emoji-icon">⚔️</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>戰鬥暴露對美軍人員自殺行為的影響：道德傷害與污名化的調節作用</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Impact of Combat Exposure on Suicidal Behavior Among U.S. Military Personnel: The Moderating Roles of Moral Injury and Stigma</p>
+          <p>研究發現戰鬥經歷與自殺行為的關聯在具有高道德傷害和高度污名感的軍人中更強，為干預提供重要方向。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">1495名有戰鬥經�的美軍人員</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">道德傷害和污名化的評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同道德傷害和污名化水平的比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">發現戰鬥經歷與自殺行為的關聯在高道德傷害和高污名感軍人中更強</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">創傷治療</span><span class="tag">PTSD</span><span class="tag">自殺防治</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610182/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔍</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>身體形象與偏執-來自大規模社區樣本的網絡分析</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>網絡分析顯示負面身體形象是偏執思想的核心節點，連接自尊、情緒調節等多個心理變量，為治療提供新方向。</p>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">心理測量</span><span class="tag">CBT</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41999079/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💼</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>C類人格障礙患者的疾病負擔：生活品質、功能與社會成本</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>C類人格障礙患者的生活品質和功能顯著受损，每年社會成本高達€27,355-€60,454，是普通人群的2.8-4.2倍。</p>
+          <div class="card-footer">
+            <span class="tag">心理測量</span><span class="tag">CBT</span><span class="tag">慢性疼痛</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41766302/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧩</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>基模治療中的正向建構：範圍性回顧</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>範圍性回顧顯示基模治療中正向建構(如健康成人模式、快樂兒童模式)與心理幸福感有強關聯，為治療提供新方向。</p>
+          <div class="card-footer">
+            <span class="tag">基模治療</span><span class="tag">心理測量</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41734134/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>超越暴露：強迫症治療的創新</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>文章探討了傳統ERP治療的局限性，並介紹五個臨床案例，展示OCD治療的多樣性和個人化發展方向。</p>
+          <div class="card-footer">
+            <span class="tag">強迫症</span><span class="tag">CBT</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41666309/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔍</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>向內看：自我概念、認知靈活性和情緒調節作為非自殺自傷停止的個人區分因素</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現統一的自我概念、情感清晰度、內控性、自我喜愛和衝動控制等因素與非自殺自傷停止有關，為治療提供新方向。</p>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">CBT</span><span class="tag">情緒調節</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41650372/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💔</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>治療浪漫分手危機的整合模型：將導向哀傷、創傷導向和關係方法相結合</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>提出整合治療浪漫分手危機的模型，結合哀傷治療、創傷導向和關係方法，透過兩個治療通道的振盪提供整合性干預。</p>
+          <div class="card-footer">
+            <span class="tag">哀傷輔導</span><span class="tag">創傷治療</span><span class="tag">伴侶/婚姻治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41618805/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏳️‍🌈</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>基於性取向的初次自殺相關披露特徵、動機和結果</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現雙性戀者比異性戀者更常披露自殺行為，更尋求正式披露渠道，且更注重獲取專業幫助，但異性戀者認為披露更有幫助。</p>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">LGBTQ</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41618782/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>CORE-10在阿根廷的心理測學特性和臨床資源：臨床切斷分數的數據驅動方法</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究確認CORE-10在阿根廷成人人口中的心理測學特性，並建立最佳臨床切斷分數(1.39)，為臨床決策提供支持。</p>
+          <div class="card-footer">
+            <span class="tag">心理測量</span><span class="tag">CBT</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610215/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🤔</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>自閉特質和精神病樣經歷對解釋和推斷社交意圖的差異效應</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現自閉特質與精神病樣經歷對心智化能力有不同影響，但沒有證據支持兩者共存對心智化有改善作用。</p>
+          <div class="card-footer">
+            <span class="tag">自閉症</span><span class="tag">焦慮症</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610200/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎯</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>注意力缺陷多動障礙中的元認知缺陷：青少年及其父母的見解</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現ADHD青少年在元認知多個維度顯著受損，且ADHD父母的元認知問題也較嚴重，與子女ADHD症狀相關。</p>
+          <div class="card-footer">
+            <span class="tag">ADHD</span><span class="tag">認知治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610199/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🦷</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>網路和社交媒體平台對牙周手術前患者焦慮和壓力水平的影響</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現手術前觀看相關影片會增加患者壓力，知識缺乏和未解決的問題也與較高焦慮相關，建議臨床工作者注意此現象。</p>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">醫療諮商</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610178/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔄</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>從暴露到洞察：五個當代OCD病例的治療經驗與未來方向</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>綜合五個OCD病例報告，提出ERP治療應精準個人化，強化期望違背、洞察力和價值導向行動，而非僅僅增加暴露。</p>
+          <div class="card-footer">
+            <span class="tag">強迫症</span><span class="tag">CBT</span><span class="tag">心理測量</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41610133/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧘</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>"赤腳在岩石上"：使用個人和群體元認知人際治療治療邊緣性人格障礙女性的羞恥與罪惡感</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>案例研究展示如何使用個人和群體元認知人際治療結合技術，處理邊緣性人格障礙患者的羞恥和罪惡感，重建自我尊嚴。</p>
+          <div class="card-footer">
+            <span class="tag">DBT</span><span class="tag">人格障礙</span><span class="tag">心理動力</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41603708/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔊</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>不適應忍受性和焦慮敏感性對青年恐聲症維持和治療的影響</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現不適應忍受性與青年恐聲症症狀嚴重程度相關，且其改善是統計認知行為治療影響症狀變化的機制。</p>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">CBT</span><span class="tag">兒童青少年</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41557948/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧩</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>阿片類物質使用障礙與感知社會隔離：潛在剖面分析</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究識別出三種阿片類物質使用障礙伴高感知社會隔離的類型，主要區別在於阿片類使用頻率，為治療提供方向。</p>
+          <div class="card-footer">
+            <span class="tag">成癮</span><span class="tag">慢性疼痛</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41546880/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">創傷治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">CBT</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">6</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">心理測量</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">強迫症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自殺防治</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">憂鬱症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">焦慮症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">成癮</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">哀傷輔導</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">伴侶/婚姻治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">LGBTQ</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">ADHD</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">DBT</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">心理動力</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">慢性疼痛</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">兒童青少年</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">道德傷害</span><span class="keyword">正念認知治療</span><span class="keyword">難治性憂鬱症</span><span class="keyword">心率變異性</span><span class="keyword">OCD治療</span><span class="keyword">人格障礙</span><span class="keyword">自殺防治</span><span class="keyword">哀傷輔導</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：glm-5.1</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
