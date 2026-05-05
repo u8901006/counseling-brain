@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年5月6日</title>
+<meta name="description" content="2026年5月6日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年5月6日</span>
+        <span class="badge badge-count">📊 13 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻著重於不同心理治療方法的有效性，特別是對於創傷治療、憂鬱症和自殺防治的研究，同時也有關於不同文化背景下的心理衛生服務和幹預措施的討論。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">📚</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>使用情感圖式治療處理羞愧與罪疚感：一個患有複合性創傷後壓力症狀（CPTSD）的個案研究。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Compassion Focused Therapy to Address Shame and Guilt: A Case Study of a Client With Complex PTSD.</p>
+          <p>本論文介紹了一個患有複合性創傷後壓力症狀（CPTSD）的女性個案，並探討了如何使用情感圖式治療（CFT）來處理羞愧與罪疚感，對臨床實踐具有顯著意義。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">患有複合性創傷後壓力症狀的成人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">情感圖式治療</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">羞愧與罪疚感的減少，以及自我安慰、情緒調節和同理心身份的增強</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">CPTSD</span><span class="tag">compassion focused therapy</span><span class="tag">shame</span><span class="tag">guilt</span><span class="tag">trauma</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42048537/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">🌟</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>使用整合式認知行為治療（CBT）處理浪漫關係破裂：對心理治療的影響。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Integrating Personality Disorders in the Treatment of Eating Disorders: A Commentary Based on Clinical Cases With Transdiagnostic Approaches.</p>
+          <p>本論文探討了整合式認知行為治療（CBT）在處理飲食障礙時的作用，並強調了整合不同治療方法的必要性。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">飲食障礙患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">整合式CBT</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">單一治療方法</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">治療效果和患者满意度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">eating disorder</span><span class="tag">CBT</span><span class="tag">personality disorder</span><span class="tag">intervention</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41755485/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">📝</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>意大利版本Spence兒童焦慮量表（SCAS-C-8）的效度驗證。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Italian Validation of the Brief Self-Reported Version of the Spence Children's Anxiety Scale for Children.</p>
+          <p>本論文對SCAS-C-8在意大利兒童中的效度和可靠性進行了驗證，為兒童焦慮症的诊断和治療提供了有價值的工具。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">8-12歲兒童</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">SCAS-C-8測量</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">其他焦虑量表</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">量表的效度和可靠性</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">SCAS-C-8</span><span class="tag">anxiety</span><span class="tag">children</span><span class="tag">assessment</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41793289/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🔬</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>統合治療對超高風險精神分裂症患者精神症状、認知偏誤和認知洞察力的影响：一項隨機對照試驗的二次結果。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Impact of the Unified Protocol on Attenuated Psychotic Symptoms, Cognitive Biases and Cognitive Insight in Patients at Ultra High Risk (UHR) for Psychosis: Secondary Results of a Pilot Randomized Controlled Trial.</p>
+          <p>本論文報告了一項隨機對照試驗的二次結果，探討統合治療對超高風險精神分裂症患者的精神症状、認知偏誤和認知洞察力的影响。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">超高風險精神分裂症患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">統合治療</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">精神症状的減輕，認知偏誤的改善，認知洞察力的提升</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">UHR</span><span class="tag">psychotherapy</span><span class="tag">attenuated psychotic symptoms</span><span class="tag">cognitive biases</span><span class="tag">cognitive insight</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41734262/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">👨‍⚕️</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>心理治療中對精神分裂症患者進行評估和治療時的專家臨床師見解。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Expert Clinician Insights Into the Diagnosis and Treatment of Men With Antisocial and Borderline Personality Disorder: A Qualitative Study.</p>
+          <p>本論文透過定性研究，提供專家臨床師對男性反社會型和邊緣型人格障礙患者的診斷和治療的見解。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">男性反社會型和邊緣型人格障礙患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">專家臨床師的診斷和治療方法</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">其他治療方法</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">治療成效和患者滿意度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">antisocial</span><span class="tag">borderline</span><span class="tag">men</span><span class="tag">personality disorder</span><span class="tag">qualitative study</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41757644/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏳️‍🌈</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>從直接治療師的視角看同性戀女性浪漫分手的心理後果。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本論文展示了直接治療師對同性戀女性患者浪漫分手心理後果的回顧性洞察，對理解同性戀患者在分手經驗中的文化特點具有顯著意義。</p>
+          <div class="card-footer">
+            <span class="tag">LGBTQ</span><span class="tag">cultural competence</span><span class="tag">minority stress</span><span class="tag">psychotherapy adaptation</span><span class="tag">romantic breakup</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42059539/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💔</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>30天內試圖自殺者的Columbia自殺危險評估量表（C-SSRS）筛檢項目的最終認同。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本研究檢查了30天內試圖自殺者在試前監禁期間對C-SSRS的回應，對自殺風險的評估具有重要價值。</p>
+          <div class="card-footer">
+            <span class="tag">Columbia Suicide Severity Rating Scale</span><span class="tag">suicidal ideation</span><span class="tag">suicide risk</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42048567/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📚</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>使用情感圖式治療處理羞愧與罪疚感：一個患有複合性創傷後壓力症狀（CPTSD）的個案研究。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本論文介紹了一個患有複合性創傷後壓力症狀（CPTSD）的女性個案，並探討了如何使用情感圖式治療（CFT）來處理羞愧與罪疚感。</p>
+          <div class="card-footer">
+            <span class="tag">CPTSD</span><span class="tag">compassion focused therapy</span><span class="tag">guilt</span><span class="tag">shame</span><span class="tag">trauma</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42048537/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👪</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>青少年過敏聽覺：親情感緒表達、家庭功能與童年創傷的相互作用——一項橫斷面控制研究。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本研究旨在探討家庭功能、青少年報告的親情感緒表達和童年創傷在青少年過敏聽覺中的作用。</p>
+          <div class="card-footer">
+            <span class="tag">adolescents</span><span class="tag">childhood trauma</span><span class="tag">comorbidity</span><span class="tag">dysfunction</span><span class="tag">emotional expression</span><span class="tag">family functioning</span><span class="tag">misophonia</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41817313/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📝</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>意大利版本Spence兒童焦慮量表（SCAS-C-8）的效度驗證。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本論文對SCAS-C-8在意大利兒童中的效度和可靠性進行了驗證。</p>
+          <div class="card-footer">
+            <span class="tag">SCAS-C-8</span><span class="tag">anxiety</span><span class="tag">assessment</span><span class="tag">children</span><span class="tag">multiple informants</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41793289/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💢</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>憤怒：一個情感圖式模型。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本文使用情感圖式治療（EST）探討了憤怒的現象學，並描述了治療過程。</p>
+          <div class="card-footer">
+            <span class="tag">attachment processes</span><span class="tag">emotional schema therapy</span><span class="tag">integrative CBT</span><span class="tag">jealousy</span><span class="tag">relationship issues</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41792995/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">😔</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>每日活動不規則性預測抑鬱症：一項每日日記研究。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本研究探討了每日活動不規則性與抑鬱症之間的關係，並考慮了感知控制的中介作用。</p>
+          <div class="card-footer">
+            <span class="tag">mental health</span><span class="tag">regular lifestyle</span><span class="tag">routinization</span><span class="tag">sense of control</span><span class="tag">social rhythm</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41772927/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💰</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>荷蘭國家病負擔研究：尋求治療的集群-C人格障礙患者；生活質量、功能和社會成本。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本研究旨在評估尋求治療的集群-C人格障礙患者的疾病負擔，包括生活質量、功能和社會成本。</p>
+          <div class="card-footer">
+            <span class="tag">burden of disease</span><span class="tag">cluster-C personality disorders</span><span class="tag">cost-off-illness</span><span class="tag">quality of life</span><span class="tag">societal costs</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41766302/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">LGBTQ+ mental health</span><span class="keyword">cultural competence</span><span class="keyword">minority stress</span><span class="keyword">psychotherapy adaptation</span><span class="keyword">romantic breakup</span><span class="keyword">Columbia Suicide Severity Rating Scale</span><span class="keyword">suicidal ideation</span><span class="keyword">suicide risk</span><span class="keyword">CPTSD</span><span class="keyword">compassion focused therapy</span><span class="keyword">guilt</span><span class="keyword">shame</span><span class="keyword">trauma</span><span class="keyword">misophonia</span><span class="keyword">anxiety</span><span class="keyword">assessment</span><span class="keyword">children</span><span class="keyword">multiple informants</span><span class="keyword">attachment processes</span><span class="keyword">emotional schema therapy</span><span class="keyword">integrative CBT</span><span class="keyword">jealousy</span><span class="keyword">relationship issues</span><span class="keyword">mental health</span><span class="keyword">regular lifestyle</span><span class="keyword">routinization</span><span class="keyword">sense of control</span><span class="keyword">social rhythm</span><span class="keyword">burden of disease</span><span class="keyword">cluster-C personality disorders</span><span class="keyword">cost-off-illness</span><span class="keyword">quality of life</span><span class="keyword">societal costs</span><span class="keyword">antisocial</span><span class="keyword">borderline</span><span class="keyword">men</span><span class="keyword">personality disorder</span><span class="keyword">qualitative study</span><span class="keyword">eating disorder</span><span class="keyword">CBT</span><span class="keyword">personality disorder</span><span class="keyword">intervention</span><span class="keyword">MCT</span><span class="keyword">UHR</span><span class="keyword">attenuated psychotic symptoms</span><span class="keyword">metacognition</span><span class="keyword">psychotherapy</span><span class="keyword">Iftar</span><span class="keyword">Muslim</span><span class="keyword">Ramadan</span><span class="keyword">disordered eating</span><span class="keyword">eating disorders</span><span class="keyword">qualitative</span><span class="keyword">early adaptive schema</span><span class="keyword">happy child mode</span><span class="keyword">healthy adult mode</span><span class="keyword">positive coping</span><span class="keyword">positive schema</span><span class="keyword">schema therapy</span><span class="keyword">defense mechanism</span><span class="keyword">non‐suicidal self‐injury</span><span class="keyword">self‐harm</span><span class="keyword">self‐injurious behavior</span><span class="keyword">self‐injury</span><span class="keyword">suicide</span><span class="keyword">alliance</span><span class="keyword">attitude</span><span class="keyword">behavior</span><span class="keyword">communication</span><span class="keyword">eating disorder</span><span class="keyword">treatment relationship</span><span class="keyword">compulsive sexual behavior</span><span class="keyword">assessment</span><span class="keyword">clinical interview</span><span class="keyword">adaptation</span><span class="keyword">depressive episode</span><span class="keyword">generalized anxiety disorder</span><span class="keyword">validity</span><span class="keyword">emotional expression</span><span class="keyword">facilitative interpersonal skills</span><span class="keyword">responsiveness</span><span class="keyword">therapist characteristics</span><span class="keyword">child clinical psychology</span><span class="keyword">depression</span><span class="keyword">gender</span><span class="keyword">health care access</span><span class="keyword">grief</span><span class="keyword">loss</span><span class="keyword">psychotherapy integration</span><span class="keyword">romantic breakup</span><span class="keyword">trauma</span><span class="keyword">bisexuality</span><span class="keyword">help‐seeking</span><span class="keyword">self‐disclosure</span><span class="keyword">sexual orientation</span><span class="keyword">suicidal behaviors</span><span class="keyword">suicidal ideation</span><span class="keyword">Argentinian validation</span><span class="keyword">CORE‐10</span><span class="keyword">clinical cut‐off</span><span class="keyword">data‐driven approach</span><span class="keyword">psychometric</span><span class="keyword">sensitivity to change</span><span class="keyword">autistic traits</span><span class="keyword">diametrical model</span><span class="keyword">psychotic‐like experiences</span><span class="keyword">theory of mind</span><span class="keyword">ADHD</span><span class="keyword">adolescents</span><span class="keyword">cognitive monitoring</span><span class="keyword">metacognition</span><span class="keyword">meta‐worry</span><span class="keyword">parents</span><span class="keyword">combat veteran</span><span class="keyword">moderated moderation</span><span class="keyword">moral injury</span><span class="keyword">stigma</span><span class="keyword">suicidal behavior</span><span class="keyword">Internet</span><span class="keyword">anxiety</span><span class="keyword">periodontal surgery</span><span class="keyword">social media</span><span class="keyword">stress level</span><span class="keyword">ACT</span><span class="keyword">expectancy violation</span><span class="keyword">exposure with response prevention</span><span class="keyword">mental contamination</span><span class="keyword">obsessive‐compulsive disorder</span><span class="keyword">Guilt</span><span class="keyword">Metacognitive Interpersonal therapy</span><span class="keyword">Personality Disorders</span><span class="keyword">Shame</span><span class="keyword">Therapeutic alliance</span><span class="keyword">anxiety sensitivity</span><span class="keyword">cognitive‐behavioral therapy</span><span class="keyword">distress Intolerance</span><span class="keyword">misophonia</span><span class="keyword">youth</span><span class="keyword">loneliness</span><span class="keyword">objective social isolation</span><span class="keyword">opioid use disorder</span><span class="keyword">perceived social isolation</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：glm-5.1</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
