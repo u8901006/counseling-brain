@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年6月6日</title>
+<meta name="description" content="2026年6月6日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年6月6日</span>
+        <span class="badge badge-count">📊 13 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於心理治療的各種領域，特別是關注到創傷治療、情緒調節、焦慮症和憂鬱症的研究，並且強調了開放科學實踐在臨床心理學中的重要性。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">📚</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>對不確定性容忍度對焦慮症和強迫症中猶豫不決的影響。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Effect of Intolerance of Uncertainty on Indecisiveness in Anxiety and Obsessive-Compulsive Disorders.</p>
+          <p>研究發現不確定性容忍度與猶豫不決之間存在關聯，為治療焦慮症和強迫症提供了新的治療途徑。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">患有焦慮症和/或強迫症的臨床樣本</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">增加或降低不確定性容忍度的措施</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">猶豫不決的程度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">強迫症</span><span class="tag">不確定性容忍度</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247665/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">📝</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>對自主情緒調節量表在人格障礙和人格問題患者多中心樣本中的心理學評估。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Psychometric Evaluation of the Norwegian Difficulties in Emotion Regulation Scale in a Multi-Site Sample of Patients With Personality Disorders and Personality Problems.</p>
+          <p>研究評估了自主情緒調節量表在人格障礙和人格問題患者中的信度和效度，為情緒調節障礙的診斷和治療提供了依據。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">患有人格障礙和人格問題的患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">使用挪威難以情緒調節量表進行評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">量表的信度和效度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">情緒調節</span><span class="tag">人格障礙</span><span class="tag">心理學評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247633/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">🚧</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>自殺念頭反應量表（RSII）的開發和初步驗證。</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Development and Initial Validation of the Response to Suicidal Ideation Inventory (RSII).</p>
+          <p>研究開發了自殺念頭反應量表，並對其心理學特質進行了初步驗證，為自殺預防提供了新的工具。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">有自殺念頭歷史的年輕成年人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">使用自殺念頭反應量表進行評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">量表的信度和效度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">自殺預防</span><span class="tag">自殺念頭</span><span class="tag">心理學評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42246059/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🌟</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>對自闭症儿童和青少年情绪调节干预措施的全面比较。</h3>
+          <p class="journal-source">Clinical psychology review &middot; Emotion regulation interventions for autistic children and adolescents: A panoramic comparison through systematic review and network meta-analysis.</p>
+          <p>系統性評估和網絡元分析表明，技術辅助教學和干預措施對自闭症兒童和青少年的情緒調節效果最佳。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自闭症兒童和青少年</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">情緒調節干预措施</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同類型的情緒調節干预措施</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">情緒調節效果</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">自闭症</span><span class="tag">情緒調節</span><span class="tag">心理治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42224908/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">💡</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>焦慮症症狀的系統性综述和元分析。</h3>
+          <p class="journal-source">Clinical psychology review &middot; A systematic review and Meta-Analytic Gaussian Network Aggregation of anxious symptoms.</p>
+          <p>研究發現，無法控制的擔憂是焦慮症症狀網絡模型中最中心的節點，突出了焦慮症治療中針對擔憂的治療價值。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">焦慮症患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">針對焦慮症症狀的治療</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同治療方法的比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">焦慮症症狀的改善</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">心理治療</span><span class="tag">系統性評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42218853/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📝</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>對自主情緒調節量表在人格障礙和人格問題患者多中心樣本中的心理學評估。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究評估了自主情緒調節量表在人格障礙和人格問題患者中的信度和效度，為情緒調節障礙的診斷和治療提供了依據。</p>
+          <div class="card-footer">
+            <span class="tag">情緒調節</span><span class="tag">人格障礙</span><span class="tag">心理學評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247633/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🚧</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>自殺念頭反應量表（RSII）的開發和初步驗證。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究開發了自殺念頭反應量表，並對其心理學特質進行了初步驗證，為自殺預防提供了新的工具。</p>
+          <div class="card-footer">
+            <span class="tag">自殺預防</span><span class="tag">自殺念頭</span><span class="tag">心理學評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42246059/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🌟</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>對自闭症儿童和青少年情绪调节干预措施的全面比较。</h3>
+          <p class="journal-source">Clinical psychology review</p>
+          <p>系統性評估和網絡元分析表明，技術辅助教學和干預措施對自闭症兒童和青少年的情緒調節效果最佳。</p>
+          <div class="card-footer">
+            <span class="tag">自闭症</span><span class="tag">情緒調節</span><span class="tag">心理治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42224908/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💡</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>焦慮症症狀的系統性综述和元分析。</h3>
+          <p class="journal-source">Clinical psychology review</p>
+          <p>研究發現，無法控制的擔憂是焦慮症症狀網絡模型中最中心的節點，突出了焦慮症治療中針對擔憂的治療價值。</p>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">心理治療</span><span class="tag">系統性評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42218853/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📚</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>對不確定性容忍度對焦慮症和強迫症中猶豫不決的影響。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>研究發現不確定性容忍度與猶豫不決之間存在關聯，為治療焦慮症和強迫症提供了新的治療途徑。</p>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">強迫症</span><span class="tag">不確定性容忍度</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247665/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📚</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>心理問題與心理健康</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本文提供了心理問題與心理健康相關的綜合性評估。</p>
+          <div class="card-footer">
+            <span class="tag">心理問題</span><span class="tag">心理健康</span><span class="tag">評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247665/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📚</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>精神分裂症患者的精神病理學和認知功能。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本文研究了精神分裂症患者的精神病理學和認知功能。</p>
+          <div class="card-footer">
+            <span class="tag">精神分裂症</span><span class="tag">認知功能</span><span class="tag">精神病理學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247665/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📚</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>開放科學在臨床心理學中的機會和挑戰。</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>本文探討了開放科學在臨床心理學中的機會和挑戰。</p>
+          <div class="card-footer">
+            <span class="tag">開放科學</span><span class="tag">臨床心理學</span><span class="tag">挑戰</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247665/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">創傷治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">CBT</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">焦慮症</span><span class="keyword">強迫症</span><span class="keyword">自殺預防</span><span class="keyword">情緒調節</span><span class="keyword">自闭症</span><span class="keyword">創傷治療</span><span class="keyword">開放科學</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：glm-5.1</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
