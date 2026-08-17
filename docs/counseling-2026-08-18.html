@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年8月18日</title>
+<meta name="description" content="2026年8月18日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年8月18日</span>
+        <span class="badge badge-count">📊 16 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">本日發現多篇關注情緒調節、正念與創傷治療的新研究，特別是 EMDR 在犯罪者羞耻情緒治療及 PTSD 症狀減輕方面的實證成效，顯示出具期待性的臨床應用。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>Examining Motor Response Inhibition in Comorbid Trichotillomania and Attention-Deficit/Hyperactivity Disorder.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Examining Motor Response Inhibition in Comorbid Trichotillomania and Attention-Deficit/Hyperactivity Disorder.</p>
+          <p>研究發現併發 ADHD 不會降低 TTM 於反應抑制任務中的表現，未證實共病 ADHD 能解釋 TTM 表現變異。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">成人 TTM 病人（TTM 獨自 n=59、TTM+ADHD n=61）與健康對照 n=59</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Go/No-Go 任務與 Stop-Signal 任務</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">健康對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">三組皆無顯著差異，未支持共病 ADHD 解釋 TTM 效能差異</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">ADHD</span><span class="tag">成癮</span><span class="tag">解離症</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42607274/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">⚖️</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>EMDR for Shame Related Offense Trauma in a Justice Involved Individual Presenting With Active Suicidality and Self-Harm.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; EMDR for Shame Related Offense Trauma in a Justice Involved Individual Presenting With Active Suicidality and Self-Harm.</p>
+          <p>單例案例顯示 EMR 於高度羞耻與自殺危機的犯罪者可顯著降低情緒痛苦，提升治療成效。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">42 歲女性囚犯 (被告竊盜) 及自殺危機自傷史</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">EMDR 八階段治療（共 20 次）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">標準治療對照（未提供）</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">情緒與自我傷害症狀顯著改善</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">EMDR</span><span class="tag">犯罪者</span><span class="tag">自殺防治</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42573457/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">🧘</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>Monitoring and Acceptance, or Monitoring Only? Effects of a Dismantled Mindfulness Intervention on Mindfulness and Emotional Outcomes: A Randomized Controlled Trial.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Monitoring and Acceptance, or Monitoring Only? Effects of a Dismantled Mindfulness Intervention on Mindfulness and Emotional Outcomes: A Randomized Controlled Trial.</p>
+          <p>14 天線上正念訓練中，接受完整「監測＋接受」與僅「監測」的兩組效果等同，皆顯著提升正向情緒與整體正念。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">392 名成人（隨機分配至 MA、MO 或等待名單）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">14 天線上正念訓練（完整 MA、僅 MO）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">等待名單對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">正念與正向情緒均有顯著提升；MA 與 MO 無顯著差異</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">正念</span><span class="tag">情緒調節</span><span class="tag">解離症</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42583947/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🤝</span>
+            <span class="utility-low">低实用性</span>
+          </div>
+          <h3>Varieties of Angry Experience: Interpersonal Construct Validity of the Displaced Aggression Questionnaire and Its Alteration Via Partialing.</h3>
+          <p class="journal-source">Assessment &middot; Varieties of Angry Experience: Interpersonal Construct Validity of the Displaced Aggression Questionnaire and Its Alteration Via Partialing.</p>
+          <p>DAQ 量表各子維度顯示預期的人際相關相依性，但將子變項互相 partial 掉會大幅削弱建構效度驗證。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">999 名美國在線成人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">結構摘要方法驗證構面效度</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">部分配合子變項與人際特質相關，partial 認知則削弱效度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">人際</span><span class="tag">怒氣</span><span class="tag">研究方法</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42604411/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">🤗</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>The Co-Evolution of Depression and Suicidal Thoughts and Behaviors Among Graduate Students: A Longitudinal Study of Social Support.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Co-Evolution of Depression and Suicidal Thoughts and Behaviors Among Graduate Students: A Longitudinal Study of Social Support.</p>
+          <p>研究發現多面向社會支持可逆轉抑鬱與自殺念 Gedanken 的聯繫，顯示加強社會資源是預防自殺的關鍵。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">827 名研究生</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">跨迴歸與潛在生長曲線模型分析</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">社會支持對後續抑鬱與自殺行為有顯著負向預測作用</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">社會支持</span><span class="tag">成癮</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42583930/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#6</span>
+            <span class="emoji-icon">🧬</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>Relationship Between Daily Psychological (In)flexibility and Affect Following Hematopoietic Cell Transplantation.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Relationship Between Daily Psychological (In)flexibility and Affect Following Hematopoietic Cell Transplantation.</p>
+          <p>在 HCT 幸存者日常生活中，接受性與承諾行動顯著關聯正面情緒，融合行為則與負面情緒相關。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">155 名 HCT 幸存者（日常評估 14 天）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">多層結構方程模型分析</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">接受與承諾行動提升情緒；融合行為降低情緒福祉</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">ACT</span><span class="tag">癌症</span><span class="tag">情緒調節</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42579866/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#7</span>
+            <span class="emoji-icon">👪</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>Longitudinal Associations Between Emotional Abuse, Family Functioning, and Depressive Symptoms in Adolescence.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Longitudinal Associations Between Emotional Abuse, Family Functioning, and Depressive Symptoms in Adolescence.</p>
+          <p>情緒虐待與後續家庭功能的衰退互相預測，顯示家庭功能是預防青少年抑鬱的重要介入點。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">1887 名意大利青少年</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">結構方程模型分析</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">情緒虐待預測後續家庭功能下降與抑鬱上升</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">情緒虐待</span><span class="tag">家庭功能</span><span class="tag">青少年</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42330248/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#8</span>
+            <span class="emoji-icon">🦠</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>Examining the Directional Effects of Insomnia, Anxiety, and Depression Symptoms: Results From a Longitudinal Study Conducted During the COVID-19 Pandemic.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Examining the Directional Effects of Insomnia, Anxiety, and Depression Symptoms: Results From a Longitudinal Study Conducted During the COVID-19 Pandemic.</p>
+          <p>失眠症狀可預測後續的憂鬱與焦慮情況，顯示干預失眠可能減緩情緒症狀惡化。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">2,666 名美國成人（COVID-19 期間）</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">兩次時間點交叉滯後模型</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">失眠顯著預測後續憂鬱與焦慮；抑鬱亦預測後續失眠與焦慮</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">COVID-19</span><span class="tag">失眠</span><span class="tag">憂鬱</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42579862/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🌏</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>The Scale of Ethnic Experience-Short Form Scores Among Asian Americans: Evidence of Measurement Invariance, Validity, and Reliability.</h3>
+          <p class="journal-source">Assessment</p>
+          <p>證明 SEE‑SF 在亞裔美國人中的量化結構、測量不變性與信度均具可靠性，可用於評估族群身份經驗。</p>
+          <div class="card-footer">
+            <span class="tag">多元文化</span><span class="tag">亞裔</span><span class="tag">量表驗證</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42572506/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🤰</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>Psychological Distress Profiles in Women With Recurrent Pregnancy Loss During Subsequent Early Pregnancy and Their Association With Sleep Characteristics: A Latent Profile Analysis.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>發現三類心理 distress 模式與睡眠品質、效率及日雙休息顯著相關，揭示睡眠干預可降低嚴重 distress 風險。</p>
+          <div class="card-footer">
+            <span class="tag">產後心理</span><span class="tag">睡眠醫學</span><span class="tag">孕婦</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42400297/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🚨</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>Development and Initial Validation of the Response to Suicidal Ideation Inventory (RSII).</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>提出 43 題 RSII 測量工具，驗證其結構與信度，顯示可捕捉青年在自殺意圖中的各種應對方式。</p>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">青少年</span><span class="tag">量表開發</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42246059/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏳️‍🌈</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>Measurement Invariance of and Mean Differences on the Kessler Psychological Distress Scale (K6) for LGBT and Cisgender, Heterosexual Individuals.</h3>
+          <p class="journal-source">Assessment</p>
+          <p>證明 K6 在 LGBT 與異性異議群體間具同質性測量效度，且 LGBT 群組的痛苦程度顯著較高。</p>
+          <div class="card-footer">
+            <span class="tag">LGBTQ</span><span class="tag">測量不變性</span><span class="tag">心理 distress</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/40995883/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧘</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>Monitoring and Acceptance, or Monitoring Only? Effects of a Dismantled Mindfulness Intervention on Mindfulness and Emotional Outcomes: A Randomized Controlled Trial.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>（重複於 top_picks，於 all_papers 僅列出一次）此研究顯示完整與僅監測兩種正念訓練的效果相近。</p>
+          <div class="card-footer">
+            <span class="tag">正念</span><span class="tag">情緒調節</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42583947/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📋</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>Assessing the Czech Version of the Inventory of Personality Organization in Relation to Borderline Personality Disorder in the ICD-11.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>驗證捷克版 IPO-CZ 可區分 BPD 相關特徵，提供低尺度測量的替代方案。</p>
+          <div class="card-footer">
+            <span class="tag">ICD-11</span><span class="tag">人格障礙</span><span class="tag">診斷工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42207962/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>The GRoNC: Guidelines for Reporting on Norm-Referenced and Criterion-Referenced Scores.</h3>
+          <p class="journal-source">Assessment</p>
+          <p>提出測量報告標準指南，協助開發者與審查者更嚴謹地描述標準分與標準化得分。</p>
+          <div class="card-footer">
+            <span class="tag">方法論</span><span class="tag">量測標準</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/40991398/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔍</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>Developing and Validating a Multi-Domain Risk Attitudes Scale in the Multi-Ethnic Asian Population in Singapore.</h3>
+          <p class="journal-source">Assessment</p>
+          <p>建置並驗證多領域風險態度量表，顯示良好的結構與跨族群測量不變性。</p>
+          <div class="card-footer">
+            <span class="tag">風險態度</span><span class="tag">亞洲</span><span class="tag">測量不變性</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/40926301/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">創傷治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">CBT</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">正念</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">情緒調節</span><span class="keyword">正念</span><span class="keyword">EMDR</span><span class="keyword">自殺防治</span><span class="keyword">社會支持</span><span class="keyword">心理 distress</span><span class="keyword">測量不變性</span><span class="keyword">多元文化</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
