@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年8月26日</title>
+<meta name="description" content="2026年8月26日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年8月26日</span>
+        <span class="badge badge-count">📊 17 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於測量工具驗證與心理機制探討，突顯數位心智化量表（DMQ）、狀態衝動模型（SPUR）及雙因子情緒調節模型（DERS-18）的發展，以及關於暴力類型、不確定性 intolerance 與自殺風險之整合性研究，反映臨床評估向多維度、情境敏感及跨文化方向邁進。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">💻</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>數位心智化問卷（DMQ）的開發與驗證：線上社交網路的多維度自報量表</h3>
+          <p class="journal-source">Assessment &middot; Development and Validation of the Digital Mentalizing Questionnaire: A Multidimensional Self-Report for Online Social Networks.</p>
+          <p>首次提出專門針對線上社交互動設計的五因素數位心智化問卷（DMQ），具備良好信度與效度，填補現有心智化量表無法捕捉線上認知-affective 需求的空白，為網路心理健康研究與介入提供工具。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text"> predominantly female adults with mean ages of 32.95 and 30.89 years across three studies</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Digital Mentalizing Questionnaire (DMQ)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">Established mentalizing measures (RFQ, MQ, MEQ) and Bergen Social Media Addiction Scale</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">DMQ demonstrated robust five-factor structure, good internal consistency (α=.67-.86), 1-month test-retest reliability (r=.58-.79), measurement invariance across gender, and convergent/divergent validity with psychopathology indicators.</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">LGBTQ</span><span class="tag">多元文化</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42639805/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">⚡</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>狀態衝動的多維度模型：SPUR 量表的開發與初步驗證</h3>
+          <p class="journal-source">Assessment &middot; In the SPUR of the Moment: The Development and Initial Validation of a Multidimensional Measure of State Impulsivity.</p>
+          <p>提出以自發性（SPontaneity）、緊迫性（Urgency）和貿然行動（Rash action）為核心的三因素狀態衝動模型（SPUR），以生態瞬間評估驗證其在預測藥物使用與自我控制方面具增量效度，支持狀態層面衝動的多維度評估。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">274 participants using ecological momentary assessment over 6 days</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">SPUR scales (SPontaneity, Urgency, Rash action)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">Existing trait and state impulsivity measures</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">SPUR showed strong reliability, convergent validity, and incremental validity in predicting drug use and self-control over alternative state measures.</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">成癮</span><span class="tag">飲食障礙</span><span class="tag">衝動控制</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42634102/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">😔</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>雙因子模型驗證情緒調節困難量表（DERS-18）：證明其於內化病理而非外化行為之特異性</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Examining the Measurement and Validity of the Difficulties in Emotion Regulation Scale and Its Short Forms.</p>
+          <p>經嚴格心理量表檢驗，DERS-18 的雙因子模型被證為最佳適合模型，發現其特定因子（非一般因子）與內化病理顯著相關，支持其在評估焦慮、抑鬱等內化症狀時較外化行為具更高效度。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">618 college students</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">DERS-18 (bifactor model)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">Other DERS versions and MMPI-3 scales</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">The bifactor DERS-18 model was best fitting; specific factors correlated with internalizing MMPI-3 scores, but not externalizing; general factor alone showed weak association with psychopathology.</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">憂鬱症</span><span class="tag">情緒調節</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42304804/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">⚠️</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>雙性戀者中阿片類濫用與自殺念頭之關聯最強：凸顯性少數群體之疏忽風險</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Link Between Opioid Misuse and Suicidal Ideation Is Strongest Among Sexual Minorities.</p>
+          <p>全美調查顯示雙性戀者阿片類濫用（5.7%）及自殺念頭（23%）最高，且阿片類濫用與自殺念頭之關聯在性少數族群中顯著強於異性戀者，提醒臨床師此群體具極高共病風險。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">Heterosexual (n=39,647), lesbian/gay (n=1,329), bisexual (n=3,774) from 2021 NSDUH</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">N/A (observational)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">Sexual identity groups</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">Opioid misuse and SI were highest among bisexuals; association between opioid misuse and SI was strongest in sexual minority respondents (r=0.082, p=0.003).</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">LGBTQ</span><span class="tag">自殺防治</span><span class="tag">成癮</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42632098/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">💥</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>暴力的四分型典範：以憤怒攻擊量表驗證其命名網絡於義大利社區樣本</h3>
+          <p class="journal-source">Assessment &middot; The Quadripartite Violence Typology: Exploring its Nomological Network Using the Aggressive Aggression Scale in a Community Sample of Italian Adults.</p>
+          <p>驗證四分暴力類型模型（QVT）下之憤怒攻擊量表（AAS）具四因素結構（動機＋自我調節維度），雖衝動/慾望因子可靠度較低，但整體支持其作為評估動機與自我調節衝動特徵的工具，超越傳統攻擊模型。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">Italian adults (N=1,238; Mage=33.5)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">Angry Aggression Scale (AAS)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">Measures of aggression, emotion dysregulation, impulsivity, psychopathy</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">Confirmatory factor analysis supported four-factor model with partial measurement invariance; subscales showed distinct nomological profiles; incremental validity over aggression measures supported.</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">創傷治療</span><span class="tag">衝動控制</span><span class="tag">人格評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42639969/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>婦女注意力缺陷/多動障礙症狀中自我報告與行為執行功能之個內與個間關聯</h3>
+          <p class="journal-source">Assessment</p>
+          <p>發現女性ADHD症狀中，反應抑制的自我報告與行為測量具 modest but significant 対應關係，而工作記憶則關聯較弱，提醒臨床評估需分離執行功能子元件。</p>
+          <div class="card-footer">
+            <span class="tag">ADHD</span><span class="tag">執行功能</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42638222/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📐</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>人際圓周模型多表面評估：角落誤差與人格功能之關聯</h3>
+          <p class="journal-source">Assessment</p>
+          <p>發現問題與效能、問題與價值之角落誤差（angular discrepancy）負相關地預測較高人格功能，顯示人際主題之內在一致性而非單一表面高低，才是適應性的關鍵。</p>
+          <div class="card-footer">
+            <span class="tag">人格評估</span><span class="tag">人際關係</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42638209/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔬</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>重新思考與推進心理療法的隨機對照試驗與元分析：迈向精準醫療</h3>
+          <p class="journal-source">Clinical psychology review</p>
+          <p>主張採用OR與SMD為主要效應指標，結合IPD與成分網路元分析，並借鏡平台試驗（如RESiLIENT）與AI個人化，以克服傳統RCT之碎片化，推動心理療法研究擴展為可擴充的精準醫療模式。</p>
+          <div class="card-footer">
+            <span class="tag">CBT</span><span class="tag">藥物治療</span><span class="tag">研究方法</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42636717/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👧</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>正義介入少女中行為障礙建議限定詞量表（PSCD）之心理特性：初步驗證</h3>
+          <p class="journal-source">Assessment</p>
+          <p>PSCD在正義介入少女樣本中得到支持：四層因子模型得以確認，內在一致性佳，與YPI及行為障礙症狀具收斂效度，顯示其具潛力作為評估具反社會特徵之青少年心理功能的工具。</p>
+          <div class="card-footer">
+            <span class="tag">兒童青少年</span><span class="tag">行為問題</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42623167/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💖</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>簡化塞西克斯-牛津慈悲量表的開發與驗證：適用於大規模篩查的親己與他人慈悲量表</h3>
+          <p class="journal-source">Assessment</p>
+          <p>從原始長版量表萃取出5項簡版（Brief SOCS-S/O），在學生、一般民眾及NHS員工樣本中展現可接受內部一致性與適量再測信度，適合在資源受限或需降低受試者負擔時使用。</p>
+          <div class="card-footer">
+            <span class="tag">正念</span><span class="tag">慈悲療法</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42623166/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💬</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>線上支持團體在拔毛癖症狀管理中的角色：質性探索</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>探討20名拔毛癖者於線上支持團體的經驗，發現其主要優勢在於可於家中參與且避免外貌暴露減少污名，多數報告正面體驗，支持線上團體為補足傳統治療不足之可行途徑。</p>
+          <div class="card-footer">
+            <span class="tag">強迫症</span><span class="tag">支援團體</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42622530/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">😴</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>懷孕婦女反覆流產後早期懷孕期間之心理困惑類型及其與睡眠特徵之關聯：潛類別分析</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>識別出三種心理困惑類型（輕度、中度、重度），並發現差劣主觀睡眠品質、日間功能障礙及低睡眠效率顯著增加中度與重度困惑風險，其中低睡眠效率對重度困惑風險影響最大（aOR=28.76）。</p>
+          <div class="card-footer">
+            <span class="tag">產後心理</span><span class="tag">睡眠醫學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42400297/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>青少年情感虐待、家庭功能與抑鬱症狀之縱向關聯：家庭動態作為關鍵中介</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>發現青少年時期之情感虐待可經由惡化家庭功能間接預測後續抑鬱症狀，但反之則不成立，支持家庭功能在情感虐待導致抑鬱之路徑中具mediating角色。</p>
+          <div class="card-footer">
+            <span class="tag">兒童青少年</span><span class="tag">家庭治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42330248/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👨‍👩‍👧‍👦</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>家庭風險與韌性調節不確定性不可容忍度與青少年自殺念頭之關聯</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>發現高家庭風險或低家庭韌性會加強不確定性不可容忍度（IU）對自殺念頭的影響，顯示家庭系統為IU與自殺風險之關鍵調節因子，提倡以家庭為基礎之預防介入。</p>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">家庭治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42319955/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧪</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>挪威人格障礙患者情緒調節困難量表（DERS）之心理評量：多站點樣本驗證</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>在2093名人格障礙或人格問題患者的多站點樣本中，DERS及其短形式（DERS-SF、DERS-18）顯示可接受信度與效度，但未發現強烈總因子，建議解讀總分時需謹慎，特別是當包含覺察與清晰度子量表時。</p>
+          <div class="card-footer">
+            <span class="tag">人格評估</span><span class="tag">情緒調節</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42247633/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🆘</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>自殺念頭應對清單（RSII）之初步開發與驗證：量測青年成人應對自殺念頭的策略</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>開發出43項、七因子結構之RSII以量測有自殺行為史青年成人應對自殺念頭的方式，初步顯示可接受信度，並與一般應對策略呈中度正相關，為理解自殺念頭波動提供新工具。</p>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">青年成人</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42246059/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔁</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>逐步驗證個人問題與優勢（IPS）量表：呼吁回歸原始八因子結構</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>對841名挪威客戶進行首次獨立驗證IPS量表，發現雖原始八因子模型結構效度獲支持，但信度表現不佳，未發現其他因子數變體具更佳效度，建議開發者回歸精煉原始架構。</p>
+          <div class="card-footer">
+            <span class="tag">結果監測</span><span class="tag">療程評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42244454/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">焦慮症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">創傷治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">LGBTQ</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自殺防治</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">情緒調節</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">ADHD</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">兒童青少年</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">家庭治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">飲食障礙</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">產後心理</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">睡眠醫學</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">成癮</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">人格評估</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">正念</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">強迫症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">研究方法</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">1</span>
+            </div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">心智化</span><span class="keyword">狀態衝動</span><span class="keyword">情緒調節</span><span class="keyword">性少數</span><span class="keyword">暴力類型</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
