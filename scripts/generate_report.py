@@ -15,7 +15,7 @@ import httpx
 
 API_BASE = "https://integrate.api.nvidia.com/v1"
 MODEL_NAME = "nvidia/nemotron-3.5-super-vl-120b-a12b"
-FALLBACK_MODEL = "z-ai/glm-5.3-flash"
+FALLBACK_MODEL = "nvidia/nemotron-3.5-lightning-30b-a3b"
 
 SYSTEM_PROMPT = (
     "你是臨床心理學與心理治療領域的資深研究員與科學傳播者。你的任務是：\n"
