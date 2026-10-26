@@ -14,8 +14,8 @@ from datetime import datetime, timezone, timedelta
 import httpx
 
 API_BASE = "https://integrate.api.nvidia.com/v1"
-MODEL_NAME = "nvidia/nemotron-3-super-120b-a12b"
-FALLBACK_MODEL = "nvidia/nemotron-3-nano-30b-a3b"
+MODEL_NAME = "nvidia/nemotron-3.5-super-vl-120b-a12b"
+FALLBACK_MODEL = "z-ai/glm-5.3-flash"
 
 SYSTEM_PROMPT = (
     "你是臨床心理學與心理治療領域的資深研究員與科學傳播者。你的任務是：\n"
