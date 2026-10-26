@@ -41,6 +41,126 @@ def load_papers(input_path: str) -> dict:
     return data
 
 
+def _extract_json_candidates(text: str) -> list[str]:
+    candidates = []
+    for start, opener in enumerate(text):
+        if opener not in "{[":
+            continue
+        stack = ["}" if opener == "{" else "]"]
+        in_string = False
+        escaped = False
+        for index in range(start + 1, len(text)):
+            char = text[index]
+            if in_string:
+                if escaped:
+                    escaped = False
+                elif char == "\\":
+                    escaped = True
+                elif char == '"':
+                    in_string = False
+                continue
+            if char == '"':
+                in_string = True
+            elif char == "{":
+                stack.append("}")
+            elif char == "[":
+                stack.append("]")
+            elif char in "}]":
+                if not stack or char != stack[-1]:
+                    break
+                stack.pop()
+                if not stack:
+                    candidates.append(text[start:index + 1])
+                    break
+        if len(candidates) >= 20:
+            break
+    return candidates
+
+
+def _repair_json_syntax(candidate: str) -> str:
+    output = []
+    in_string = False
+    index = 0
+    while index < len(candidate):
+        char = candidate[index]
+        if in_string:
+            if char == "\\":
+                if index + 1 >= len(candidate):
+                    output.append("\\\\")
+                    index += 1
+                    continue
+                next_char = candidate[index + 1]
+                if next_char == "u" and index + 5 < len(candidate) and all(
+                    digit in "0123456789abcdefABCDEF" for digit in candidate[index + 2:index + 6]
+                ):
+                    output.append(candidate[index:index + 6])
+                    index += 6
+                    continue
+                if next_char in '"\\/bfnrt':
+                    output.append(candidate[index:index + 2])
+                    index += 2
+                    continue
+                output.append("\\\\")
+                index += 1
+                continue
+            if char == '"':
+                in_string = False
+                output.append(char)
+                index += 1
+                continue
+            codepoint = ord(char)
+            if codepoint < 32:
+                escapes = {"\n": "\\n", "\r": "\\r", "\t": "\\t"}
+                output.append(escapes.get(char, "\\u%04x" % codepoint))
+            else:
+                output.append(char)
+            index += 1
+            continue
+        if char == '"':
+            in_string = True
+            output.append(char)
+            index += 1
+            continue
+        if char == ",":
+            lookahead = index + 1
+            while lookahead < len(candidate) and candidate[lookahead].isspace():
+                lookahead += 1
+            if lookahead < len(candidate) and candidate[lookahead] in "}]":
+                index += 1
+                continue
+        output.append(char)
+        index += 1
+    return "".join(output)
+
+
+def parse_model_json(text: str) -> dict:
+    if not isinstance(text, str):
+        raise json.JSONDecodeError("Model response is not text", "", 0)
+    source = text.lstrip("\ufeff").strip()
+    last_error = None
+    seen = set()
+    for candidate in _extract_json_candidates(source):
+        for variant in (candidate, _repair_json_syntax(candidate)):
+            if variant in seen:
+                continue
+            seen.add(variant)
+            try:
+                parsed = json.loads(variant)
+            except json.JSONDecodeError as error:
+                last_error = error
+                continue
+            if isinstance(parsed, list):
+                parsed = next((item for item in parsed if isinstance(item, dict) and any(
+                    key in item for key in ("market_summary", "top_picks", "all_papers")
+                )), None)
+            if isinstance(parsed, dict) and any(
+                key in parsed for key in ("market_summary", "top_picks", "all_papers")
+            ):
+                return parsed
+    if last_error is not None:
+        raise last_error
+    raise json.JSONDecodeError("No valid report JSON object found", source, 0)
+
 def analyze_papers(api_key: str, papers_data: dict) -> dict:
     tz_taipei = timezone(timedelta(hours=8))
     date_str = papers_data.get("date", datetime.now(tz_taipei).strftime("%Y-%m-%d"))
@@ -147,7 +267,7 @@ def analyze_papers(api_key: str, papers_data: dict) -> dict:
                     text = text.split("\n", 1)[1] if "\n" in text else text[3:]
                     text = text.rstrip("`").strip()
 
-                result = json.loads(text)
+                result = parse_model_json(text)
                 print(
                     f"[INFO] Analysis complete: {len(result.get('top_picks', []))} top picks, {len(result.get('all_papers', []))} total",
                     file=sys.stderr,
