@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年11月2日</title>
+<meta name="description" content="2026年11月2日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年11月2日</span>
+        <span class="badge badge-count">📊 17 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">本日文獻以AI在自閉症評估中的應用、心理照護者心理健康介入、以及從業者接受線上治療的態度因治療取向而異三大議題為核心。值得注意的是，「idionomic revolution」呼籲打破統計學平均偏差、EMDR用於處理犯罪個案的羞耻感以及創傷症狀治療的有效性，顯示了心理治療研究正從大眾模型轉向個體化、具文化敏感性的方向發展。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🔍</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>The Italian Certainty About Mental States Questionnaire: Validation and Links to Schizotypy and Psychoticism.</h3>
+          <p class="journal-source">Assessment &middot; The Italian Certainty About Mental States Questionnaire: Validation and Links to Schizotypy and Psychoticism.</p>
+          <p>在非臨床樣本中驗證了Italian CAMSQ量表的因素結構與信效度，發現較高的精神病質與解離特徵與「自我確定性較低、他者確定性較高」的失衡相關，提供了精神病理評估的新工具與視角。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">社區樣本(N=496)，包含二元性別群體</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">量表驗證與精神病理相關性分析</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同性別群體間的量度 invariance 比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">確認CAMSQ具良好的量度不變性與收斂效度，提示感知到的心智歸屬與精神病理特徵系統相關</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">創傷治療</span><span class="tag">精神病理評估</span><span class="tag">mentalization</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42934529/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">👨‍👩‍👧‍👦</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>Effectiveness of psychosocial interventions addressing informal caregivers' mental health: an umbrella systematic review with 26,481 participants.</h3>
+          <p class="journal-source">Clinical psychology review &middot; Effectiveness of psychosocial interventions addressing informal caregivers' mental health: an umbrella systematic review with 26,481 participants.</p>
+          <p>覆蓋26,481位非專業照護者的傘狀系統綜述，證實多成分介入對痴呆照護者有顯著減少憂鬱、焦慮與照護負擔的功效，不同臨床對象（肺癌、兒童癌症、精神分裂症）的有效介入模式各異，提供循證依據指導政策與實務。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">面對各類慢性/嚴重疾病的非專業照護者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">多成分介入、心理教育、技能訓練</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">對照組(增強型常規照護)</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">憂鬱症狀、焦慮症狀、照護負擔(SMD -0.19 至 -2.10)之顯著減少</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">親職教養</span><span class="tag">創傷治療</span><span class="tag">憂鬱症</span><span class="tag">焦慮症</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42863359/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">💡</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>One size fits none: A call for an idionomic revolution.</h3>
+          <p class="journal-source">Clinical psychology review &middot; One size fits none: A call for an idionomic revolution.</p>
+          <p>批判心理學目前對平均效應的過度依賴（ergodic error），提出idionomic analysis作為從 idiographic（個體）模型出發，再衍生 nomothetic 原則的新路徑，主張治療必須建立在個體變化軌跡之上，而非依賴WEIRD樣本的平均統計。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">臨床心理學研究從業者與理論構建者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">重新思考統計方法與治療個體化</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">傳統群組平均統計 vs. 個體化 idionomic 分析</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">重新定義治療效果的衡量標準，主張從群組層面的平均效應轉向個體層面的變化軌跡與機制</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">精神分析</span><span class="tag">人本取向</span><span class="tag">創傷治療</span><span class="tag">個案治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42710383/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🚑</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>The Effectiveness of Dialectical Behavior Therapy in Reducing Self-Directed Violence and Suicidality in Usual Care Settings: A Meta-Analysis.</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Effectiveness of Dialectical Behavior Therapy in Reducing Self-Directed Violence and Suicidality in Usual Care Settings: A Meta-Analysis.</p>
+          <p>在常規照護環境中，DBT對減少自殺與自傷行為顯示大效應，雖對危機服務使用與自殺意念的證據較有限，但整體仍證實DBT在預防自殺行為方面的實用意義，特別是在資源受限的 UC 設定中。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">接受 DBT 介入的臨床人群</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">辯證行為治療(DBT)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">常規照護 vs. 非常規環境</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">自殺與自傷行為之減少、危機服務使用減少、自殺意念變化</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">DBT</span><span class="tag">創傷治療</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42541715/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">🌍</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>Comparative efficacy of task-sharing psychosocial interventions for preventing common mental disorders in low- and middle-income countries: A systematic review and network meta-analysis with 10,747 participants.</h3>
+          <p class="journal-source">Clinical psychology review &middot; Comparative efficacy of task-sharing psychosocial interventions for preventing common mental disorders in low- and middle-income countries: A systematic review and network meta-analysis with 10,747 participants.</p>
+          <p>大規模網路統計元分析證實任務分擔式心理介在在預防 LMIC 常見精神疾病方面有效，wellbeing promotion 與 psychoeducation 在預防憂鬱症方面排行第一，證實了在資源有限環境下，低成本乙介入的潛力與證據基礎。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">低中收入國家成年人</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">任務分擔式心理介入(wellbeing promotion、psychoeducation、CBT等)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">增強型常規照護(ETAU/TAU)</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">預防憂鬱、PTSD 與焦慮症狀的風險降低與症狀嚴重度減少</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">憂鬱症</span><span class="tag">PTSD</span><span class="tag">任務分擔</span><span class="tag">低中所得國家</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42561576/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#6</span>
+            <span class="emoji-icon">🤖</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>Artificial Intelligence in Autism Assessment: A Conceptual Framework for Multimodal Artificial Intelligence Integration.</h3>
+          <p class="journal-source">Assessment &middot; Artificial Intelligence in Autism Assessment: A Conceptual Framework for Multimodal Artificial Intelligence Integration.</p>
+          <p>提出了AI在自閉症評估中整合 computer vision、speech analysis、NLP 與多模態融入的概念框架，探討了如何提升 ADOS-2 等工具的效率與一致性，同時警惕 bias 與數據品質變異對臨床判斷的影響。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自閉症譜系症(ASD)兒童</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">多模態 AI 整合與自動化評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">傳統臨床診斷流程(ADOS-2, ADI-R)</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">提升評估標準化、工作流程效率，但需謹慎應對偏差與臨床判斷的協調</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">自閉症</span><span class="tag">AI</span><span class="tag">評估技術</span><span class="tag">多模態</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42957979/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#7</span>
+            <span class="emoji-icon">🤖</span>
+            <span class="utility-low">低实用性</span>
+          </div>
+          <h3>Evaluating large language models versus human therapists in generating interventions for patients with depression in psychodynamic psychotherapy.</h3>
+          <p class="journal-source">Journal of consulting and clinical psychology &middot; Evaluating large language models versus human therapists in generating interventions for patients with depression in psychodynamic psychotherapy.</p>
+          <p>比較LLM與人類治療師在產生心理動力學憂鬱症介入中的差異，發現人類在「意味建構」層面的介入質量顯著高於 LLM，其他類型介入無顯著差異，提示 LLM 作為「監督下的輔助工具」而非獨立治療者的定位。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">憂鬱症患者</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">大型語言模型生成的心理治療介入</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">人類治療師生成的介入</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">介入的 typicality 與 quality 的比較，人類在意味建構上優於 AI</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">AI</span><span class="tag">憂鬱症</span><span class="tag">心理動力學</span><span class="tag">科技倫理</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42956229/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📚</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>How to Practice Open Science: A Cookbook for Clinical Psychology and Psychotherapy Research.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>提供在臨床心理學與精神病學研究中實踐開放科學的實務指南，說明從研究設計、數據收集到公開出版的各階段操作，並討論敏感資料處理與研究團隊結構的改組方案。</p>
+          <div class="card-footer">
+            <span class="tag">Open Science</span><span class="tag">研究方法</span><span class="tag">倫理</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42944539/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>The Association Between Cognitive Flexibility and Eating Behaviors in Autistic Women With Eating Disorders.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>探討自閉症女性與飲食失調之間的認知靈活性關聯，發現自閉症+飲食失調群組在注意細節方面的認知靈活性困難最為明顯，並注意到認知特徵與飲食行為之間的群組間差異，提示在治療飲食失調時必須考慮共病自閉症的因素。</p>
+          <div class="card-footer">
+            <span class="tag">自閉症</span><span class="tag">飲食障礙</span><span class="tag">認知靈活性</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42928969/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚖️</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>The Psychometric Properties and Clinical Usefulness of the Difficulties in Emotion Regulation Scale in Forensic Settings.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>在 forensic 環境中評估 DERS 的 psychometric 屬性，發現完整的 36 項量表模型 fit 不良，而 DERS-16 與 DERS-8 的短版本具有更好的模型適配度與信度，建議在 forensic 實務中使用短版本以減低患者負擔。</p>
+          <div class="card-footer">
+            <span class="tag">情緒調節</span><span class="tag">psychometric</span><span class="tag">forensic settings</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42490400/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📈</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>Optimizing Expectations Leads to Enhanced Efficacy of a Mindfulness-Based Intervention in Individuals With Low-Baseline Expectations: A Randomized Controlled Trial.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>實驗性試驗證實調高治療期待能顯著增強正念介入的功效，特別是對 baseline 期待較低的參與者，expectation manipulation 導致正向情感、正念與壓力改善的顯著差異，提示治療期待是一個關鍵的調節變項。</p>
+          <div class="card-footer">
+            <span class="tag">正念</span><span class="tag">治療期待</span><span class="tag">安慰劑效應</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42478332/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>A systematic review of state loneliness in daily life using intensive longitudinal methods.</h3>
+          <p class="journal-source">Clinical psychology review</p>
+          <p>系統性綜述總結了 intensive longitudinal methods (EMA、ESM、Daily Diary) 在探測 moment-to-moment 狀態孤獨方面的現狀，發現孤獨與心理健康結果（如內向症狀、自殺傾向）之間存在雙向關聯，但量度標準化與實證心理測驗證據仍屬不足。</p>
+          <div class="card-footer">
+            <span class="tag">狀態孤獨</span><span class="tag">強度量測</span><span class="tag">心理健康結果</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42664540/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚠️</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>Adverse Childhood Experiences and Suicidal Acts in Adolescents: A Systematic Literature Review.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>系統性文獻綜述確認 ACEs 與青少年自殺行為之間的一致性相關，性虐待、體罰、親職分離/離異、同儕霸凌是最常見的相關 ACEs 類型，親友支持與學校歸屬感等緩衝因子可部分降低此風險。</p>
+          <div class="card-footer">
+            <span class="tag">童年創傷</span><span class="tag">自殺防治</span><span class="tag">青少年</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42555834/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>Rethinking and advancing meta-analyses and randomized trials of psychotherapies.</h3>
+          <p class="journal-source">Clinical psychology review</p>
+          <p>闡明了 response 與 effect、MIC 與 SWD 等關鍵概念的差異，主張使用 odds ratio 与 standardized mean differences 結合臨床意義閾值，並呼籲透過 IPD 與 component network meta-analysis 推動心理治療研究向 precision medicine 發展。</p>
+          <div class="card-footer">
+            <span class="tag">meta分析</span><span class="tag">隨機對照試驗</span><span class="tag">證據綸士</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42636717/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🪞</span>
+            <span class="utility-high utility-sm">高</span>
+          </div>
+          <h3>Eye Movement Desensitization and Reprocessing (EMDR) for Shame Related Offense Trauma in a Justice Involved Individual Presenting With Active Suicidality and Self-Harm.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>個案研究報告了 EMDR 在處理犯罪個案、高羞耻感、活躍自殺意念與自傷行為中的應用與臨床效果，證實了 EMDR 在處理 offence-related shame 時的療效，特別是對於司法系統介入的人群。</p>
+          <div class="card-footer">
+            <span class="tag">EMDR</span><span class="tag">創傷治療</span><span class="tag">自殺防治</span><span class="tag">羞耻感</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42573457/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💻</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>When Therapy Goes Online: How Orientation, Experience, and Perceived Patient Openness Shape Attitudes Toward Online Therapy.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>調查 387 位治療師的線上治療態度，發現精神動力取向的治療師對線上治療持較負面態度，而科技實踐經驗與被患者被 perceived openness 正向預測態度，年齡與經驗年資無顯著影響，提示需要導向精神動力取向治療師的線上治療訓練。</p>
+          <div class="card-footer">
+            <span class="tag">線上治療</span><span class="tag">治療取向</span><span class="tag">科技接受度</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42570337/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔁</span>
+            <span class="utility-low utility-sm">high</span>
+          </div>
+          <h3>The Effectiveness of Dialectical Behavior Therapy in Reducing Self-Directed Violence and Suicidality in Usual Care Settings: A Meta-Analysis.</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>This systematic meta-analysis examined the effectiveness of DBT in reducing suicidality-related outcomes when delivered in usual care settings. In uncontrolled studies, DBT was associated with a large reduction in self-directed violence and medium reductions in crisis service use and suicidal ideation.</p>
+          <div class="card-footer">
+            <span class="tag">DBT</span><span class="tag">自殺防治</span><span class="tag">常規照護</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42541715/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">創傷治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">6</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">憂鬱症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:83%"></div></div>
+              <span class="topic-count">5</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">焦慮症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:66%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">DBT</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自殺防治</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">正念</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">AI</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自閉症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">Open Science</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">親職教養</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">認知靈活性</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">情緒調節</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">forensic settings</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">線上治療</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">task-sharing</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">wellbeing promotion</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:16%"></div></div>
+              <span class="topic-count">1</span>
+            </div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">AI</span><span class="keyword">創傷治療</span><span class="keyword">DBT</span><span class="keyword">情緒調節</span><span class="keyword">Open Science</span><span class="keyword">個體化治療</span><span class="keyword">任務分擔介入</span><span class="keyword">精神病理評估</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3.5-super-vl-120b-a12b</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
