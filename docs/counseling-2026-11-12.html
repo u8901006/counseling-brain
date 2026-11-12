@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Counseling Brain &middot; 臨床心理與心理治療文獻日報 &middot; 2026年11月12日</title>
+<meta name="description" content="2026年11月12日 臨床心理與心理治療文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #eef3f8; --surface: #f8faff; --line: #c8d6e5; --text: #1a2a3a; --muted: #5a7089; --accent: #2b6cb0; --accent-soft: #d0e2f2; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #f0f5ff 0, var(--bg) 55%, #dce6f0 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(43,108,176,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(43,108,176,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(26,42,58,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(26,42,58,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(26,42,58,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .news-card.featured:hover { border-color: var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #f0f5ff; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #2d7a4f; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(45,122,79,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,112,137,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(248,250,255,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #f0f5ff; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(43,108,176,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #5a9fd4); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🧠</div>
+    <div class="header-text">
+      <h1>Counseling Brain &middot; 臨床心理與心理治療文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年11月12日</span>
+        <span class="badge badge-count">📊 27 篇文獻</span>
+        <span class="badge badge-source">Powered by PubMed + NVIDIA Nemotron</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻呈現兩大趨勢：心理評估量表的跨文化效度驗證與心理衛生數位化；臨床介入則聚焦高危險群（如邊緣人格、飲食障礙、自殺風險）的干預與人際支持。</p>
+  </div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>⭐</span>今日精選 TOP Picks</div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#1</span>
+            <span class="emoji-icon">🧠</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>邊緣人格障礙簡短人格導向干預：BPD Compass 病例研究</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Application of a Brief, Personality-Based Intervention for Borderline Personality Disorder for a Patient With Intersecting Identities: A BPD Compass Case Study.</p>
+          <p>透過針對特定身份與文化背景調整的 BPD Compass 模組化認知行為干預，顯著降低邊緣人格障礙患者的症狀嚴重度（Zanarini 評分從 23 降至 6），並改善飲食障礙與社交焦慮。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">一位 25 歲雙性戀 Appalachian 女性，診斷為邊緣人格障礙、持續性抑鬱障礙、暴飲暴食障礙及亞臨床社交焦慮</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">BPD Compass（18 次模組化認知行為介入，包含價值澄清、認知彈性、行為技能與正念策略）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組（單一病例研究）</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">邊緣人格症狀顯著下降，不再符合暴飲暴食及臨床顯著社交焦慮標準，情緒調節、人際功能與衝動控制改善</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">邊緣人格</span><span class="tag">CBT</span><span class="tag">多元文化</span><span class="tag">飲食障礙</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/43002641/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#2</span>
+            <span class="emoji-icon">⚠️</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>體重歧視、身體信任與青少年自殺念頭之縱向關聯研究</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Weight Stigma, Body Trust, and Suicide Ideation Among Adolescents: A Longitudinal Study.</p>
+          <p>研究發現內化體重歧視預測較低身體信任，且體重歧視與自殺念頭存在相互關聯，強調需針對體重偏見與身體信任進行干預以降低青少年自殺風險。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">伊朗青少年 (N=1243)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（觀察性縱向研究）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">內化體重歧視降低身體信任；體重歧視與自殺念頭呈相互預測關係；較高身體信任預測較低自殺念頭</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">兒童青少年</span><span class="tag">自殺防治</span><span class="tag">正念</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42700472/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#3</span>
+            <span class="emoji-icon">🎓</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>同儕支持與研究生憂鬱及自殺行為之共演化：縱向研究</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Co-Evolution of Depression and Suicidal Thoughts and Behaviors Among Graduate Students: A Longitudinal Study of Social Support.</p>
+          <p>研究指出研究生憂鬱與自殺思維具有自我強化的循環關係，且感知到的社會支持隨時間下降，社會支持對兩者具有顯著的緩衝與預防作用。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">研究生 (N=827)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（觀察性縱向研究）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無對照組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">憂鬱與自殺思維隨時間呈正向回饋循環；社會支持與後續憂鬱及自殺行為呈負向關聯</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">憂鬱症</span><span class="tag">自殺防治</span><span class="tag">壓力調適</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42583930/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#4</span>
+            <span class="emoji-icon">🧘</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>兒童與青少年認知行為治療中，會議導入正念對症狀與治療聯盟之影響：隨機對照試驗</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Impact of Mindfulness as a Session-Introduction on Symptoms and Alliance in Individual Cognitive-Behavioral Therapy With Children and Adolescents: A Randomized Controlled Trial.</p>
+          <p>會議導入正念介入（IG-M）相較於無標準導入（CG）能顯著改善症狀與患者視角下的治療聯盟，但未優於放鬆介入（CG-R）。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">11-19 歲青少年，診斷為憂鬱、焦慮障礙或過動症 (N=90)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">會議導入正念介入 (IG-M)</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">會議導入放鬆介入 (CG-R) 與無標準導入 (CG)</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">IG-M 顯著優於 CG 在症狀改善與治療聯盟提升，但與 CG-R 無差異</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">兒童青少年</span><span class="tag">CBT</span><span class="tag">正念</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42667691/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#5</span>
+            <span class="emoji-icon">🌈</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>濫用阿片藥物與性少數群體自殺念頭之關聯：全國調查研究</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; The Link Between Opioid Misuse and Suicidal Ideation Is Strongest Among Sexual Minorities.</p>
+          <p>研究發現性少數群體（特別是雙性戀者）的阿片濫用與自殺念頭比例最高，且兩者關聯在性少數群體中最強，提示臨床需特別關注此族群的共病風險。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">美國全國調查參與者，分為異性戀、女同性戀/男同性戀、雙性戀群體</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（橫斷面研究）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">異性戀 vs. 性少數群體</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">性少數群體阿片濫用與自殺念頭比例較高，且兩者關聯在性少數群體中最強</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">LGBTQ</span><span class="tag">成癮</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42632098/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#6</span>
+            <span class="emoji-icon">💻</span>
+            <span class="utility-high">高实用性</span>
+          </div>
+          <h3>遠距健康與面對面 WAIS-5 測試結果之等值性與重測信度研究</h3>
+          <p class="journal-source">Assessment &middot; Investigating the Equivalence and Test-Retest Reliability of WAIS-5 Test Results Between Telehealth and In-Person Assessment Modalities.</p>
+          <p>研究證明居家遠距健康方式施測 WAIS-5 在大部分核心指標上與面對面評估具等值性，且重測信度相近，支持遠距認知評估的臨床應用。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">英語使用者 (N=98，Mage=47.1 歲)，來自澳洲與紐西蘭</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">透過視訊進行 WAIS-5 評估</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">面對面 WAIS-5 評估</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">全量級 IQ 與大部分核心指標在等值範圍內，重測信度相近 (ICC 介於 .62-.93)</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">醫療諮商</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/43000689/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#7</span>
+            <span class="emoji-icon">🤝</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>人際困擾在焦慮與憂鬱中的角色：長期隨訪研究</h3>
+          <p class="journal-source">Journal of clinical psychology &middot; Distant and Distressed: Interpersonal Problems in Anxiety and Depression.</p>
+          <p>研究發現目前患有焦慮或憂鬱的參與者報告較高的人際困擾與順從型人際風格，且「冷漠-順從」風格與更高的共病率及慢性度相關。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">荷蘭抑鬱與焦慮研究 9 年隨訪參與者 (N=1800)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（觀察性研究）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">目前診斷組 vs. 既往診斷組 vs. 無終身診斷組</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">目前診斷組人際困擾更高且傾向順從風格；冷漠-順從風格預測更高共病與慢性度</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">憂鬱症</span><span class="tag">焦慮症</span><span class="tag">人本取向</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42731108/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div>
+        <div class="news-card featured">
+          <div class="card-header">
+            <span class="rank-badge">#8</span>
+            <span class="emoji-icon">👨‍👩‍👧</span>
+            <span class="utility-mid">中实用性</span>
+          </div>
+          <h3>親職情緒調節量表 (REPS) 在不同種族群體中的測量不變性驗證</h3>
+          <p class="journal-source">Assessment &middot; Measurement Invariance of the Regulation of Emotions in Parenting Scale (REPS): Psychometric Validation Across Ethnoracial Groups.</p>
+          <p>REPS 量表在多種族群體中具有良好內部一致性與預測效度，雖未達完全標量不變性，但部分標量不變性模型支持其在多元文化背景下的使用。</p>
+          
+            <div class="pico-grid">
+              <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">多種族父母 (N=1,408)</span></div>
+              <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無介入（心理計量學研究）</span></div>
+              <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同種族群體間的量表表現比較</span></div>
+              <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">配置與量度不變性支持，部分標量不變性支持，各族群內部一致性強，預測效度一致</span></div>
+            </div>
+          <div class="card-footer">
+            <span class="tag">親職教養</span><span class="tag">多元文化</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41287369/" target="_blank">閱讀原文 →</a>
+          </div>
+        </div></div>
+
+  <div class='section'><div class='section-title'><span class='section-icon'>📚</span>其他值得關注的文獻</div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🍽️</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>合併飲食障礙與情緒不穩定人格障礙成人心理健康服務體驗之質적研究</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>合併飲食障礙與情緒不穩定人格障礙的成人報告等待時間長、照護割裂，且常感到被迫優先處理某一問題而非自身目標，強調需個人化照護與 comorbidity 評估。</p>
+          <div class="card-footer">
+            <span class="tag">飲食障礙</span><span class="tag">邊緣人格</span><span class="tag">醫療諮商</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42731115/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧬</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>多重硬朗症 (MS) 患者不確定性不耐受量表-12 的因子結構與心理測量特性</h3>
+          <p class="journal-source">Assessment</p>
+          <p>IUS-12 在多重硬朗症患者中顯示良好建構效度與中度重測信度，且兩組間具測量不變性，但 IU 與焦慮病理在 MS 群體中關聯更強。</p>
+          <div class="card-footer">
+            <span class="tag">焦慮症</span><span class="tag">醫療諮商</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/43000606/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🌿</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>原住民家庭治療訓練對原住民從業者自我轉變之影響</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>將原住民知識體系融入西方系統式家庭治療課程，在文化安全過程中顯著促進原住民學生的個人與專業成長。</p>
+          <div class="card-footer">
+            <span class="tag">家族治療</span><span class="tag">多元文化</span><span class="tag">臨床訓練</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42989770/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🤗</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>社會連結與自我歸屬感在開放式心理治療中的改變：縱向研究</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>長期心理治療中社會連結呈逐漸正向增長，且社會連結與自我歸屬感之間存在長時差的互惠關聯，建議臨床上持續監測此兩項資源。</p>
+          <div class="card-footer">
+            <span class="tag">憂鬱症</span><span class="tag">社會支持</span><span class="tag">心理動力</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42695247/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚖️</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>活著與死亡感知效用與自殺念頭隨時間變化之探索</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>活著與死亡的感知效用（利益與成本之比）與自殺念頭相關，且活著的感知成本預測較低的生存慾望，為自殺干預提供新視角。</p>
+          <div class="card-footer">
+            <span class="tag">自殺防治</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42667686/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🏥</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>幹細胞移植後每日心理(非)彈性與情感之關聯</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>在造血細胞移植幸存者中，承諾行動、接納與價值連結與更好的情感相關，而融合與缺乏行動則與較差情感相關，提示 ACT 相關過程為潛在干預目標。</p>
+          <div class="card-footer">
+            <span class="tag">醫療諮商</span><span class="tag">正念</span><span class="tag">慢性疼痛</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42579866/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">💇</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>拔毛癥症狀管理中線上支持團體的角色</h3>
+          <p class="journal-source">Journal of clinical psychology</p>
+          <p>線上支持團體為拔毛癥患者提供了低污名化的支持管道，多數參與者持正面看法，儘管少數人認為可能重新接觸拔毛誘因。</p>
+          <div class="card-footer">
+            <span class="tag">強迫症</span><span class="tag">支持團體</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42622530/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">👨‍👩‍👧</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>親職情緒調節量表 (REPS) 在不同種族群體中的測量不變性驗證</h3>
+          <p class="journal-source">Assessment</p>
+          <p>REPS 量表在多種族群體中具有良好內部一致性與預測效度，雖未達完全標量不變性，但部分標量不變性模型支持其在多元文化背景下的使用。</p>
+          <div class="card-footer">
+            <span class="tag">親職教養</span><span class="tag">多元文化</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41287369/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📊</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>建立兒童及青少年焦慮與憂鬱 PROMIS 代理人量表的規範水準</h3>
+          <p class="journal-source">Assessment</p>
+          <p>PROMIS 家長代理人量表具備規範參考價值，但存在強烈底板效應，建議臨床參考本研究提供的年齡與性別分層規範值。</p>
+          <div class="card-footer">
+            <span class="tag">兒童青少年</span><span class="tag">憂鬱症</span><span class="tag">焦慮症</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41263198/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🎭</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>多面黑三聯徵 (FDT) 量表之開發與驗證</h3>
+          <p class="journal-source">Assessment</p>
+          <p>FDT 量表整合了精神病質、自戀與馬基雅維利主義的多個面向，提供長、短與超短版，具有較佳心理測量特性與準則預測力。</p>
+          <div class="card-footer">
+            <span class="tag">人格障礙</span><span class="tag">評估工具</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41257478/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧠</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>NIH 工具箱認知電池 V3 規範化</h3>
+          <p class="journal-source">Assessment</p>
+          <p>NIHTB-CB V3 基於大型美國代表性樣本建立了年齡與教育調整的規範分數，適用於廣泛的臨床與流行病學研究。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">神經心理學</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41239878/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">⚖️</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>性侵犯者樣本中結構化保護因素評估 (SAPROF) 評分的結構與聚合特性</h3>
+          <p class="journal-source">Assessment</p>
+          <p>SAPROF 在治療過後的性侵犯者樣本中呈現穩定的三因子結構，並與風險-需求-反應性模式量表具有臨床意義的關聯。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">暴力風險評估</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41229145/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📉</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>親密伴侶暴力風險評估工具中遺失項目資料對預測準確度的影響</h3>
+          <p class="journal-source">Assessment</p>
+          <p>ODARA 與 SARA-V2 風險評估工具對遺失項目資料具強健性，建議在實務中採用比例法 (proration) 而非簡單加總。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">家庭暴力</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41222107/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧊</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>青少年和年輕成人日常生活中冷漠-無情特質的個體內與個體間結構</h3>
+          <p class="journal-source">Assessment</p>
+          <p>冷漠-無情特質在日常情境中呈現個體內波動，雙因子與相關因子模型均可接受，提示需考慮不同年齡群體的因模型差異。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">人格特質</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41190465/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🛑</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>漸進式測驗停止規則設定之實用且透明工具箱</h3>
+          <p class="journal-source">Assessment</p>
+          <p>本研究提出 A-E 圖表來評估不同停止規則對測驗準確性與效率的影響，提供測驗開發者與管理者設定適當停止規則的方法。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">測驗設計</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41178637/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🪞</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>西班牙族群身體與外貌參考構念量表 (IRBAS) 之開發與驗證</h3>
+          <p class="journal-source">Assessment</p>
+          <p>IRBAS 為一單一維度量表，具有高內部一致性與時間穩定性，可用於評估與身體外貌相關的參考構念，並與身體不滿與身體變形傾向相關。</p>
+          <div class="card-footer">
+            <span class="tag">飲食障礙</span><span class="tag">評估工具</span><span class="tag">身體形象</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41147669/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">📱</span>
+            <span class="utility-mid utility-sm">中</span>
+          </div>
+          <h3>中風後認知障礙深度表型與監測之線上遠端評估技術 IC3 開發與驗證</h3>
+          <p class="journal-source">Assessment</p>
+          <p>IC3 數位認知電池對中風患者具有高效遠端診斷潛力，即使在 MoCA 正常範圍內的患者中也能發現高比例的認知障礙。</p>
+          <div class="card-footer">
+            <span class="tag">醫療諮商</span><span class="tag">神經心理學</span><span class="tag">數位健康</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41147646/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🧩</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>英語社區成人與中風倖存者多重任務測驗-家庭版 (MET-Home) 修訂</h3>
+          <p class="journal-source">Assessment</p>
+          <p>修訂後的 MET-Home 與原版在關鍵結果上無統計差異，內部一致性良好，並與 MoCA、Barthel 指數等外部測驗呈中度相關。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">中風</span><span class="tag">執行功能</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41133782/" target="_blank">PubMed →</a>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="card-header-row">
+            <span class="emoji-sm">🔍</span>
+            <span class="utility-low utility-sm">低</span>
+          </div>
+          <h3>探討多維度精神質的最佳概念化與評估結構</h3>
+          <p class="journal-source">Assessment</p>
+          <p>研究支持精神質的三因子模型（陽性、陰性、混亂），雖四與五因子模型適配度較好，但對預測結果指標並無顯著提升。</p>
+          <div class="card-footer">
+            <span class="tag">評估工具</span><span class="tag">精神分裂譜系</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/41133661/" target="_blank">PubMed →</a>
+          </div>
+        </div></div>
+
+  <div class='topic-section section'><div class='section-title'><span class='section-icon'>📊</span>主題分佈</div>
+            <div class="topic-row">
+              <span class="topic-name">邊緣人格</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:25%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">自殺防治</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:37%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">評估工具</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+              <span class="topic-count">8</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">兒童青少年</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:37%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">多元文化</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:37%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">憂鬱症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:37%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">焦慮症</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:37%"></div></div>
+              <span class="topic-count">3</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">飲食障礙</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:25%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">正念</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:25%"></div></div>
+              <span class="topic-count">2</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">醫療諮商</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+              <span class="topic-count">4</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-name">LGBTQ</span>
+              <div class="topic-bar-bg"><div class="topic-bar" style="width:12%"></div></div>
+              <span class="topic-count">1</span>
+            </div></div>
+
+  <div class='keywords-section section'><div class='section-title'><span class='section-icon'>🏷️</span>關鍵字</div><div class='keywords'><span class="keyword">邊緣人格障礙</span><span class="keyword">自殺防治</span><span class="keyword">遠距評估</span><span class="keyword">青少年心理</span><span class="keyword">人際困擾</span><span class="keyword">多元文化</span></div></div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3.5-super-vl-120b-a12b</span>
+    <span><a href="https://www.leepsyclinic.com/" target="_blank">🏥 李政洋身心診所首頁</a> &middot; <a href="https://github.com/u8901006/counseling-brain">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
